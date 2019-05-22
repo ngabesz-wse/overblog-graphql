@@ -1,0 +1,16 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+  product.resolver:
+      class: ApiBundle\GraphQL\Resolver\Product
+      arguments: ["@doctrine"]
+      tags:
+          - { name: overblog_graphql.resolver, method: findAll, alias: allProducts }
+          - { name: overblog_graphql.resolver, method: resolveProductFields, alias: productFields }
+          - { name: overblog_graphql.resolver, method: resolve, alias: product }
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
