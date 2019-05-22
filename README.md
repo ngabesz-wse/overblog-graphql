@@ -8,8 +8,8 @@ This Symfony starter-kit is bundled with:
 - Symfony 3
 - nginx
 - PHP-fpm 7.2
-- PostgreSQL 10.1
-- composer
+- mysql
+- phpmyadmin
 - MailCatcher
 
 Each service runs in a dedicated container, and the whole thing is orchestrated with `docker-compose`.
@@ -25,16 +25,16 @@ You need [Docker Engine](https://docs.docker.com/engine/) and [Docker Compose](h
 docker-compose up -d
 
 # browse website
-xdg-open http://localhost
+http://localhost
 
-# watch emails sent in MailCatcher
-xdg-open http://localhost:81
+#phpmyadmin
+http://localhost:8080
 
 # run Symfony console
 ./console
 
-# connect to PostgreSQL
-./psql
+# run composer
+./composer
 ```
 
 ### Map a different host port
