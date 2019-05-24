@@ -22,6 +22,9 @@ http://localhost:8080
 
 # graphql explorer
 http://localhost/app_dev.php/graphiql
+
+# graphql endpoint
+http://localhost/app_dev.php/graphql
 ```
 
 ## tasks
