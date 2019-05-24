@@ -1,24 +1,8 @@
-# compose-symfony
+## Symfony Overblog Graphqlbundle integration
 
-Run Symfony3 in seconds!
+docs: https://github.com/overblog/GraphQLBundle
 
-## Features
-
-This Symfony starter-kit is bundled with:
-- Symfony 3
-- nginx
-- PHP-fpm 7.2
-- mysql
-- phpmyadmin
-- MailCatcher
-
-Each service runs in a dedicated container, and the whole thing is orchestrated with `docker-compose`.
-
-## Requirements
-
-You need [Docker Engine](https://docs.docker.com/engine/) and [Docker Compose](https://docs.docker.com/compose/) installed on your machine.
-
-## Quick start
+# Quick start
 
 ```sh
 # boot containers
@@ -30,26 +14,18 @@ http://localhost
 #phpmyadmin
 http://localhost:8080
 
-# run Symfony console
+# run Symfony console from outside of continer
 ./console
 
-# run composer
+# run Symfony console from outside of continer
 ./composer
+
+# graphql explorer
+http://localhost/app_dev.php/graphiql
 ```
 
-### Map a different host port
+## tasks
+Implement connections: Product - Manufacturer (many-to-one), Product - Categories (many-to-many)
+Implement mutations: delete product, update product (patrial), insert product, CRUD relations through owning side
 
-By default, the web server will be mapped to host port `80`, but specifying another port is as easy as:
 
-```
-EXTERNAL_PORT=8000 docker-compose up -d
-xdg-open http://localhost:8000
-```
-
-### Map a different host port for MailCatcher
-
-By default, MailCatcher web interface will be mapped to host port `81`. Change with:
-```
-EXTERNAL_MAILCATCHER_PORT=8001 docker-compose up -d
-xdg-open http://localhost:8001
-```
